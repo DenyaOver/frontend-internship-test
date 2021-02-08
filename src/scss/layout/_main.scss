@@ -1,7 +1,9 @@
 // Main styles
 $primary-color: #fcaf32;
 $secondary-color: #fc888e;
-
+*{
+  box-sizing: border-box;
+}
 html,
 body {
   font-family: 'Lato', sans-serif;
@@ -31,5 +33,130 @@ body {
 
   &:hover {
     transform: scale(1.15);
+  }
+}
+.popup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form{
+  position: fixed;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items:center;
+  max-width: 300px;
+  transition: all 2s linear;
+  padding: 30px;
+  background-color:white;
+}
+.show{
+  display: flex;
+  cursor: default;
+  &:hover {
+    transform: none;
+  }
+}
+.hide{
+  display: none;
+}
+span{
+  margin-bottom: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 26px;
+}
+input{
+  margin-bottom: 20px;
+  padding: 16px;
+  width: 100%;
+  font-size: 10px;
+}
+.checkbox-row{
+  position: relative;
+  margin-bottom: 20px;
+}
+#Agree{
+  appearance: none;
+  position: absolute;
+}
+.checkbox-label{
+  padding-left: 30px;
+}
+.checkbox-label::before{
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  background-color:red;
+  position: absolute;
+  top:0;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.checkbox-label::after{
+  content: "";
+  display: block;
+  height: 16px;
+  width: 16px;
+  background: url(/design/1.png);
+  opacity: 0;
+  background-size: 16px 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#Agree:checked + .checkbox-label::before{
+  background-color:#fc888e;
+}
+#Agree:checked + .checkbox-label::after{
+  opacity: 1;
+}
+#Agree:checked{
+  outline: none;
+}
+#Agree:focus{
+  outline: none;
+}
+.close-button{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  left: 93%;
+  top: -2%;
+  cursor: pointer;
+
+}
+.close-button::before{
+  position: absolute;
+  font-weight: 1000;
+  font-size: 26px;
+  content: "×";
+  top: -5px;
+  left: 4px;
+}
+.close-button:active, .close-button:focus{
+  outline: none;
+}
+.submit{
+  transition: all 0.5s;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 100%;
+  font-size: 13px;
+  &:hover{
+    background: $secondary-color;
+    opacity: 0.7;
+    border: 1px solid $secondary-color;
   }
 }

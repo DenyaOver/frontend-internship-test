@@ -15,7 +15,19 @@
       <!-- Display success message below -->
     </section>
     <div class="popup">
-      <!-- Here goes your popup form HTML code -->
+      <form class="hide">
+        <div class="close-button"></div>
+        <span>
+          Login
+        </span>
+        <input type = "email" id="email" name="email" required placeholder = "E-mail">
+        <input type = "password" id="password" name="password" required placeholder = "Password">
+        <div class="checkbox-row">
+          <input type = "checkbox" name = "Agree" id = "Agree"></input>
+          <label for = "Agree" class = "checkbox-label">I agree to terms & conditions</label>
+        </div>
+        <input type="submit" value="SUBMIT" class="submit"></input>
+      </form>
     </div>
     <script src="js/index.min.js" charset="utf-8"></script>
   </body>
